@@ -172,15 +172,15 @@ setTexture(GX2Texture *texture,
    auto imageAddress = texture->surface.image.getAddress();
    auto mipAddress = texture->surface.mipmaps.getAddress();
 
-   decaf_check(!(mipAddress & 0xff));
-   decaf_check(!(imageAddress & 0xff));
+//   decaf_check(!(mipAddress & 0xff));
+//   decaf_check(!(imageAddress & 0xff));
 
-   if (texture->surface.tileMode >= GX2TileMode::Tiled2DThin1 && texture->surface.tileMode != GX2TileMode::LinearSpecial) {
-      if ((texture->surface.swizzle >> 16) & 0xFF) {
-         imageAddress ^= (texture->surface.swizzle & 0xFFFF);
-         mipAddress ^= (texture->surface.swizzle & 0xFFFF);
-      }
-   }
+//   if (texture->surface.tileMode >= GX2TileMode::Tiled2DThin1 && texture->surface.tileMode != GX2TileMode::LinearSpecial) {
+//      if ((texture->surface.swizzle >> 16) & 0xFF) {
+//         imageAddress ^= (texture->surface.swizzle & 0xFFFF);
+//         mipAddress ^= (texture->surface.swizzle & 0xFFFF);
+//      }
+//   }
 
    auto word2 = latte::SQ_TEX_RESOURCE_WORD2_N::get(imageAddress >> 8);
    auto word3 = latte::SQ_TEX_RESOURCE_WORD3_N::get(mipAddress >> 8);
