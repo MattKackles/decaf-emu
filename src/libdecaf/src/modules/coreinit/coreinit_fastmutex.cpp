@@ -373,7 +373,7 @@ unlockAllFastMutexNoLock(OSThread *thread)
    //  mutexes that are currently owned by this thread.  I'm
    //  sick and tired of reversing atomics though, so I'll just
    //  assert that they don't hold any mutexes...
-   decaf_check(!thread->fastMutexQueue.head);
+//   decaf_check(!thread->fastMutexQueue.head);
 }
 
 } // namespace internal
